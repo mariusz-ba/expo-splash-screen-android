@@ -10,8 +10,14 @@ SplashScreen.setOptions({
 });
 
 export default function App() {
+  const onLayout = () => {
+    setTimeout(() => {
+      SplashScreen.hideAsync();
+    }, 2000);
+  };
+
   return (
-    <View style={styles.container}>
+    <View style={styles.container} onLayout={onLayout}>
       <Text>Open up App.js to start working on your app!</Text>
       <StatusBar style="auto" />
     </View>
